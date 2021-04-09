@@ -1,9 +1,10 @@
-from chronosTest.Pages.base_page import BasePage
+from Pages.base_page import BasePage
 from selenium.webdriver.common.by import By
 
 
 class LoginPage(BasePage):
 
+    WelcomeMessageTitle = (By.XPATH, "//div[@class='page-title']")
     GetStartedButton = (By.XPATH, "//*[text()=' Get Started ']")
     ImportAccountButton = (By.XPATH, "//*[text()=' Import Account ']")
     CreateAccountButton = (By.XPATH, "//*[text()=' Create Account ']")
@@ -11,11 +12,18 @@ class LoginPage(BasePage):
     PasswordField = (By.XPATH, "//input[@name='password']")
     ConfirmPasswordField = (By.XPATH, "//input[@name='confirmPassword']")
     ImportAccount = (By.XPATH, "//*[text()=' IMPORT ']")
-    SmallMenuOpenButton = (By.XPATH, "//div[contains(@class, 'mat-menu-trigger')]")
     LockAccountButton = (By.XPATH, "//*[text()='Lock account']")
     UnlockAccountButton = (By.XPATH, "//*[text()=' UNLOCK ']")
     InitRestoreAccountButton = (By.XPATH, "//a[text()='Restore Your Account']")
     ConfirmRestoreAccountButton = (By.XPATH, "//*[text()=' RESTORE ']")
+    BackButton = (By.XPATH, "//div[contains(@class, 'btn__back')]")
+    LetsDecentrPageTitle = (By.XPATH, "//div[@class='page-title']")
+    LetsDecentrPageSubTitle = (By.XPATH, "//div[@class='page-subtitle']")
+    RestoreAccountPageTitle = (By.XPATH, "//div[contains(@class, 'page-title')]")
+    RestoreAccountPageContent = (By.XPATH, "//div[@class='page-content']")
+
+    def get_welcome_message_title(self):
+        return self.get_text(self.WelcomeMessageTitle)
 
     def click_on_get_started_button(self):
         self.click_on(self.GetStartedButton)
@@ -25,7 +33,6 @@ class LoginPage(BasePage):
 
     # def click_on_create_account_button(self):
     #     self.click_on(self.CreateAccountButton)
-    #     self.driver.find_element_by_xpath("//*[text()=' Create an Account ']").click()
 
     def enter_seed_phrase(self, text):
         self.type_in(self.SeedPhraseField, text)
@@ -39,9 +46,6 @@ class LoginPage(BasePage):
     def click_on_import_account(self):
         self.click_on(self.ImportAccount)
 
-    def open_small_menu(self):
-        self.click_on(self.SmallMenuOpenButton)
-
     def lock_account(self):
         self.click_on(self.LockAccountButton)
 
@@ -53,3 +57,18 @@ class LoginPage(BasePage):
 
     def restore_account(self):
         self.click_on(self.ConfirmRestoreAccountButton)
+
+    def click_back_button(self):
+        self.click_on(self.BackButton)
+
+    def get_lets_decentr_page_title(self):
+        return self.get_text(self.LetsDecentrPageTitle)
+
+    def get_lets_decentr_page_subtitle(self):
+        return self.get_text(self.LetsDecentrPageSubTitle)
+
+    def get_restore_account_page_title(self):
+        return self.get_text(self.RestoreAccountPageTitle)
+
+    def get_restore_account_page_content(self):
+        return self.get_text(self.RestoreAccountPageContent)

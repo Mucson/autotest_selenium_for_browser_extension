@@ -8,9 +8,8 @@ class BasePage(object):
         self.driver = driver
 
     def get_element(self, locator):
-        # expected_condition_q = ec.
         expected_conditions = ec.presence_of_element_located(locator)
-        return WebDriverWait(self.driver, 15).until(expected_conditions, message="Something went wrong")
+        return WebDriverWait(self.driver, 20).until(expected_conditions, message="Something went wrong")
 
     def click_on(self, locator):
         self.get_element(locator).click()
