@@ -4,6 +4,7 @@ from chronosTest.Pages.base_page import BasePage
 
 class dHubPage(BasePage):
 
+    SmallMenuOpenButton = (By.XPATH, "//div[contains(@class, 'mat-menu-trigger')]")
     NewPostButton = (By.XPATH, "//*[text()=' New post ']")
     ChoosePostTopicButton = (By.XPATH, "//mat-select[contains(@class,'mat-select')]")
     ChoosePostTopic = (By.XPATH, "//span[text()='Science & Technology']")
@@ -18,7 +19,9 @@ class dHubPage(BasePage):
     SuccessfulPublishPostMessage = (By.XPATH, "//div[@role='alertdialog']")
     SuccessfulDeletePostMessage = (By.XPATH, "//div[@role='alertdialog']")
 
-    # create post
+    def open_small_menu(self):
+        self.click_on(self.SmallMenuOpenButton)
+
     def click_new_post_button(self):
         self.click_on(self.NewPostButton)
 
@@ -32,9 +35,8 @@ class dHubPage(BasePage):
         self.click_on(self.PublishPostButton)
 
     def get_successful_publish_post_message(self):
-        self.get_text(self.SuccessfulPublishPostMessage)
+        return self.get_text(self.SuccessfulPublishPostMessage)
 
-    # delete post
     def go_to_latest_posts_page_and_choose_published_post(self):
         self.click_on(self.LatestNewsTab)
         self.click_on(self.PublishedPost)
@@ -48,4 +50,4 @@ class dHubPage(BasePage):
         self.click_on(self.ConfirmDeleteButton)
 
     def get_successful_delete_post_message(self):
-        self.get_text(self.SuccessfulDeletePostMessage)
+        return self.get_text(self.SuccessfulDeletePostMessage)

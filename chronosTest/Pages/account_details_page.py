@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 from chronosTest.Pages.base_page import BasePage
 
 
-class UserMenu(BasePage):
+class AccountDetailsPage(BasePage):
     UserIconMenuButton = (By.XPATH, "//div[contains(@class,'menu__user-item ')]")
     FormFieldFirstName = (By.XPATH, "//div[text()='First Name']/..//input")
     FormFieldLastName = (By.XPATH, "//div[text()='Last Name']/..//input")
@@ -15,6 +15,7 @@ class UserMenu(BasePage):
     SaveButton = (By.XPATH, "//*[text()=' Save ']")
     SuccessfulUpdateUserInfoMessage = (By.XPATH, "//div[@role='alertdialog']")
     BackButton = (By.XPATH, "//div[contains(@class, 'btn__back')]")
+    AccountDetailsPageTitle = (By.XPATH, "//div[contains(@class, 'page-title')]")
 
     def go_to_account_details(self):
         self.click_on(self.UserIconMenuButton)
@@ -55,3 +56,6 @@ class UserMenu(BasePage):
 
     def click_back_button(self):
         self.click_on(self.BackButton)
+
+    def get_account_details_page_title(self):
+        return self.get_text(self.AccountDetailsPageTitle)
