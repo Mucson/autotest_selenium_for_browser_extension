@@ -1,9 +1,9 @@
 import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from chronosTest.Pages.dhub_page import dHubPage
-from chronosTest.Pages.login_page import LoginPage
-from chronosTest.Pages.account_details_page import AccountDetailsPage
+from Pages.dhub_page import dHubPage
+from Pages.login_page import LoginPage
+from Pages.account_details_page import AccountDetailsPage
 
 chromeOptions = Options()
 chromeOptions.add_extension("/home/vladimir/Downloads/charon_extension.zip")

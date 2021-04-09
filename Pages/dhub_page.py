@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-from chronosTest.Pages.base_page import BasePage
+from Pages.base_page import BasePage
 
 
 class dHubPage(BasePage):
