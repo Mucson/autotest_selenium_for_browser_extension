@@ -1,4 +1,4 @@
-from Pages.base_page import BasePage
+from Charon.pages.base_page import BasePage
 from selenium.webdriver.common.by import By
 
 
@@ -12,7 +12,8 @@ class LoginPage(BasePage):
     PasswordField = (By.XPATH, "//input[@name='password']")
     ConfirmPasswordField = (By.XPATH, "//input[@name='confirmPassword']")
     ImportAccount = (By.XPATH, "//*[text()=' IMPORT ']")
-    LockAccountButton = (By.XPATH, "//*[text()='Lock account']")
+    # LockAccountButton = (By.XPATH, "//*[text()='Lock account']")
+    LockAccountButton = (By.XPATH, "//div[@data-id='lock account']")
     UnlockAccountButton = (By.XPATH, "//*[text()=' UNLOCK ']")
     InitRestoreAccountButton = (By.XPATH, "//a[text()='Restore Your Account']")
     ConfirmRestoreAccountButton = (By.XPATH, "//*[text()=' RESTORE ']")
