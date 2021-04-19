@@ -1,11 +1,11 @@
-#Feature: Authorization into the system
-#
-#  Scenario: Import account
-#    Given I click Get Started button
-#    When I click Import account button
-#    When I type credentials
-#    When I click Import account
-#    Then I verify I am on the dhub page
+Feature: Authorization into the system
+
+  Scenario: Import account
+    Given I click Get Started button
+    When I click Import account button
+    When I type credentials
+    When I click Import account
+    Then I verify I am on the dhub page
 
 Feature: Smoke tests
   Background:
