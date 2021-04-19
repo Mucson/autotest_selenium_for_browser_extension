@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-from Pages.base_page import BasePage
+from Charon.pages.base_page import BasePage
 
 
 class AccountDetailsPage(BasePage):
@@ -45,7 +45,7 @@ class AccountDetailsPage(BasePage):
     def enter_new_password(self, password):
         self.type_in(self.NewPasswordField, password)
 
-    def confirm_password(self, password):
+    def confirm_new_password(self, password):
         self.type_in(self.ConfirmPasswordField, password)
 
     def click_save_button(self):
