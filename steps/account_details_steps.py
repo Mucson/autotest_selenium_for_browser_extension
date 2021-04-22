@@ -2,8 +2,8 @@ import time
 
 from behave import *
 
-from Charon.pages.dhub_page import dHubPage
-from Charon.pages.account_details_page import AccountDetailsPage
+from pages.dhub_page import dHubPage
+from pages.account_details_page import AccountDetailsPage
 
 
 @given("I open menu")

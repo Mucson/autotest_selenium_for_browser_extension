@@ -7,9 +7,9 @@ Feature: Authorization into the system
     When I click Import account
     Then I verify I am on the dhub page
 
-Feature: Smoke tests
-  Background:
-    Given I imported my account
+#Feature: Smoke tests
+#  Background:
+#    Given I imported my account
 
   Scenario: Publish and delete post
     When I click New Post button
@@ -20,7 +20,7 @@ Feature: Smoke tests
   Scenario: Fill in the user info
     Given I open menu
     When I open account details page
-    When I fill in the account details page
+#    When I fill in the account details page
     When I fill in the first name field
     When I fill in the last name field
     When I select gender
@@ -46,3 +46,12 @@ Feature: Smoke tests
     When I type credentials
     When I click restore button
     Then I verify I am on the dhub page
+
+  Scenario: Send token
+    Given I open dPortal page
+    When I open Assets tab
+    When I click Send button
+    When I input amount
+    When I input wallet address
+    When I click Send button
+    Then I see element with text "Successfully sent"

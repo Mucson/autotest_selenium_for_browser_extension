@@ -1,10 +1,10 @@
 from selenium.webdriver.common.by import By
-from Charon.pages.base_page import BasePage
+from pages.base_page import BasePage
 
 
 class dHubPage(BasePage):
 
-    SmallMenuOpenButton = (By.XPATH, "//div[contains(@class, 'mat-menu-trigger')]")
+    SmallMenuOpenButton = (By.XPATH, "//div[contains(@class, 'menu__trigger')]")
     NewPostButton = (By.XPATH, "//*[text()=' New post ']")
     ChoosePostTopicButton = (By.XPATH, "//mat-select[contains(@class,'mat-select')]")
     ChoosePostTopic = (By.XPATH, "//span[text()='Science & Technology']")
@@ -18,6 +18,7 @@ class dHubPage(BasePage):
     ConfirmDeleteButton = (By.XPATH, "//div[text()=' Delete ']")
     SuccessfulPublishPostMessage = (By.XPATH, "//div[@role='alertdialog']")
     SuccessfulDeletePostMessage = (By.XPATH, "//div[@role='alertdialog']")
+    dPortalPageButton = (By.XPATH, "//div[@data-id='dportal']")
 
     def open_small_menu(self):
         self.click_on(self.SmallMenuOpenButton)
@@ -51,3 +52,6 @@ class dHubPage(BasePage):
 
     def get_successful_delete_post_message(self):
         return self.get_text(self.SuccessfulDeletePostMessage)
+
+    def click_dportal_page_button(self):
+        self.click_on(self.dPortalPageButton)
