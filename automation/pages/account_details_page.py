@@ -1,4 +1,4 @@
-from pages.base_page import BasePage
+from automation.pages.base_page import BasePage
 from selenium.webdriver.common.by import By
 
 

@@ -1,7 +1,7 @@
 import time
 
 from behave import *
-from pages.login_page import LoginPage
+from automation.pages.login_page import LoginPage
 
 
 @given("I click Get Started button")

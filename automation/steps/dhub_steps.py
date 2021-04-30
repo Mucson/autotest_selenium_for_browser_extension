@@ -1,7 +1,7 @@
 import time
 
 from behave import *
-from pages.dhub_page import dHubPage
+from automation.pages.dhub_page import dHubPage
 
 
 @when("I click New Post button")

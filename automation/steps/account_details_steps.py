@@ -2,8 +2,8 @@ import time
 
 from behave import *
 
-from pages.dhub_page import dHubPage
-from pages.account_details_page import AccountDetailsPage
+from automation.pages.dhub_page import dHubPage
+from automation.pages.account_details_page import AccountDetailsPage
 
 
 @given("I open menu")

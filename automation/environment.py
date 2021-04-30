@@ -6,7 +6,7 @@ from selenium.webdriver.chrome.options import Options
 
 def before_all(context):
     chromeOptions = Options()
-    chromeOptions.add_extension("/home/vladimir/Downloads/charon_chrome.zip")
+    chromeOptions.add_extension("/home/vladimir/Downloads/charon_extension.zip")
     chromeOptions.add_argument("--start-maximized")
     context.driver = webdriver.Chrome(executable_path="/usr/bin/chromedriver", options=chromeOptions)
     context.driver.get("chrome://extensions/")
