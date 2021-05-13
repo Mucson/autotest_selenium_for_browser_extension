@@ -15,6 +15,7 @@ def step_impl(context):
 @when("I delete published post")
 def step_impl(context):
     dhub_page = dHubPage(context.driver)
+    time.sleep(1)
     dhub_page.go_to_latest_posts_page_and_choose_published_post()
     dhub_page.cancel_delete_button()
     dhub_page.click_delete_button()

@@ -39,7 +39,7 @@ class dHubPage(BasePage):
         return self.get_text(self.SuccessfulPublishPostMessage)
 
     def go_to_latest_posts_page_and_choose_published_post(self):
-        self.click_on(self.LatestNewsTab)
+        # self.click_on(self.LatestNewsTab)
         self.click_on(self.PublishedPost)
 
     def cancel_delete_button(self):

@@ -56,12 +56,11 @@ Feature: Charon smoke and regression tests
     When I open Assets tab
     When I click Send button
     Then I see validation message for amount field
-      | amount    | text                      |
-      | 12qwe     | Incorrect amount format   |
-      | 0         | Minimum value is 0.000001 |
-      | 2000      | Insufficient funds        |
-      | 0.0000001 | Minimum value is 0.000001 |
-      | 0,00001   | Incorrect amount format   |
+      | amount     | text                      |
+      | 0          | Minimum value is 0.000001 |
+      | 2000       | Insufficient funds        |
+      | 0.0000001  | Minimum value is 0.000001 |
+      | 0.01233212 | Incorrect amount format   |
 
     Then I see validation message for wallet address field
       | wallet_address                                 | text                                |
