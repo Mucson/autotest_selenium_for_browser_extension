@@ -6,9 +6,10 @@ from selenium.webdriver.chrome.options import Options
 
 def before_all(context):
     chromeOptions = Options()
-    chromeOptions.add_extension("/home/vladimir/Downloads/charon_extension.zip")
+    chromeOptions.add_extension("/home/vladimir/Downloads/charon_20210608-1831_v1.3.2_chrome.zip")
     chromeOptions.add_argument("--start-maximized")
-    context.driver = webdriver.Chrome(executable_path="/usr/bin/chromedriver", options=chromeOptions)
+    # context.driver = webdriver.Chrome(executable_path="/usr/bin/chromedriver", options=chromeOptions)
+    context.driver = webdriver.Chrome(executable_path="/home/vladimir/Downloads/chromedriver", options=chromeOptions)
     context.driver.get("chrome://extensions/")
     extension_id = context.driver.execute_async_script(
         "return_var = arguments[0];const extensions = document.querySelector("
