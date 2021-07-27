@@ -20,7 +20,7 @@ def step_impl(context):
     time.sleep(1)
 
 
-@when("I open account details page")
+@when("I open user page")
 def step_impl(context):
     account_details_page = AccountDetailsPage(context.driver)
     account_details_page.go_to_account_details()
@@ -51,12 +51,6 @@ def step_impl(context):
     account_details_page.enter_bio_field(context.config.get("account", "bio_info"))
 
 
-@when('I fill in the nickname field')
-def step_impl(context):
-    account_details_page = AccountDetailsPage(context.driver)
-    account_details_page.enter_nickname(context.config.get("account", "nickname"))
-
-
 @when('I fill in the password field')
 def step_impl(context):
     account_details_page = AccountDetailsPage(context.driver)
@@ -83,6 +77,5 @@ def step_impl(context):
     account_details_page.select_gender_male()
     account_details_page.select_gender_female()
     account_details_page.enter_bio_field(context.config.get("account", "bio_info"))
-    account_details_page.enter_nickname(context.config.get("account", "nickname"))
     account_details_page.enter_new_password(context.config.get("account", "password"))
     account_details_page.confirm_new_password(context.config.get("account", "confirm_password"))

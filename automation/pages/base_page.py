@@ -7,6 +7,10 @@ class BasePage(object):
     def __init__(self, driver):
         self.driver = driver
 
+    def on_this_page(self, *args):
+        for locator in args:
+            self.get_element(locator)
+
     def get_element(self, locator):
         expected_conditions = ec.presence_of_element_located(locator)
         return WebDriverWait(self.driver, 20).until(expected_conditions, message="Something went wrong")

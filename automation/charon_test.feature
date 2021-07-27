@@ -13,14 +13,14 @@ Feature: Charon smoke and regression tests
     When I delete published post
     Then I see element with text "Post has been removed successfully"
 
-  Scenario: Fill in the user info
+  Scenario: Edit profile info
     Given I open menu
-    When I open account details page
+    When I open user page
+    When I open user profile page
     When I fill in the first name field
     When I fill in the last name field
     When I select gender
     When I fill in the bio field
-    When I fill in the nickname field
     When I fill in the password field
     When I fill in the confirm password field
     When I click Save button
