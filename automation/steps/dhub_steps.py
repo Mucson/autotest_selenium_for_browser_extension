@@ -21,9 +21,7 @@ def step_impl(context):
     dhub_page.click_delete_button()
 
 
-@given("I open dPortal page")
+@given("I open menu")
 def step_impl(context):
     dhub_page = dHubPage(context.driver)
     dhub_page.open_small_menu()
-    time.sleep(1)
-    dhub_page.click_dportal_page_button()

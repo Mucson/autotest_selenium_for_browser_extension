@@ -6,6 +6,10 @@ class BasePage(object):
 
     def __init__(self, driver):
         self.driver = driver
+        self._verify_page_()
+
+    def _verify_page_(self):
+        pass
 
     def on_this_page(self, *args):
         for locator in args:

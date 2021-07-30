@@ -5,6 +5,8 @@ Feature: Charon smoke and regression tests
     When I click Import account button
     When I type credentials
     When I click Import account
+    When I choose cookie and click confirm
+    When I click all done button
     Then I verify I am on the dhub page
 
   Scenario: Publish and delete post
@@ -27,7 +29,7 @@ Feature: Charon smoke and regression tests
     Then I see element with text "User was successfully updated"
 
   Scenario: Lock, unlock, restore account
-    Given I open menu
+    Given I open small menu
     When I click lock account
     When I click restore account
     When I click back
@@ -58,7 +60,6 @@ Feature: Charon smoke and regression tests
     Then I see validation message for amount field
       | amount     | text                      |
       | 0          | Minimum value is 0.000001 |
-      | 2000       | Insufficient funds        |
       | 0.0000001  | Minimum value is 0.000001 |
       | 0.01233212 | Incorrect amount format   |
 

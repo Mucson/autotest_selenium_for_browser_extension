@@ -2,22 +2,7 @@ import time
 
 from behave import *
 
-from automation.pages.dhub_page import dHubPage
 from automation.pages.account_details_page import AccountDetailsPage
-
-
-@given("I open menu")
-def step_impl(context):
-    dhub_page = dHubPage(context.driver)
-    dhub_page.open_small_menu()
-    time.sleep(1)
-
-
-@when("I open menu")
-def step_impl(context):
-    dhub_page = dHubPage(context.driver)
-    dhub_page.open_small_menu()
-    time.sleep(1)
 
 
 @when("I open user page")
@@ -29,6 +14,7 @@ def step_impl(context):
 @when('I fill in the first name field')
 def step_impl(context):
     account_details_page = AccountDetailsPage(context.driver)
+    time.sleep(1)
     account_details_page.enter_first_name(context.config.get("account", "first_name"))
 
 

@@ -14,6 +14,7 @@ class dPortalPage(BasePage):
     WalletAddressField = (By.XPATH, "//textarea[contains(@class, 'transfer-input')]")
     CopyWalletAddressButton = (By.XPATH, "//button[contains(@class, 'portal-page__copy-wallet-button')]")
     SuccessfulSendingInfoMessage = (By.XPATH, "//div[@role='alertdialog']")
+    SmallMenuButton = (By.XPATH, "div[contains(@class, 'menu__trigger')]")
 
     def open_assets_tab(self):
         self.click_on(self.AssetsTab)
@@ -32,3 +33,6 @@ class dPortalPage(BasePage):
 
     def get_successful_sending_message(self):
         self.get_text(self.SuccessfulSendingInfoMessage)
+
+    def open_small_menu(self):
+        self.click_on(self.SmallMenuButton)

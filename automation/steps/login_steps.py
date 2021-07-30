@@ -52,7 +52,7 @@ def step_impl(context):
     login_page.lock_account()
     assert "Let's Decentr!" in login_page.get_lets_decentr_page_title()
     assert "The decentralized data market" in login_page.get_lets_decentr_page_subtitle()
-    time.sleep(2)
+    time.sleep(1)
 
 
 @when("I click restore account")
@@ -66,6 +66,7 @@ def step_impl(context):
 def step_impl(context):
     login_page = LoginPage(context.driver)
     login_page.click_back_button()
+    time.sleep(1)
 
 
 @when("I fill in the password")
@@ -92,3 +93,15 @@ def step_impl(context):
 def step_impl(context):
     login_page = LoginPage(context.driver)
     login_page.restore_account()
+
+
+@when("I choose cookie and click confirm")
+def step_impl(context):
+    login_page = LoginPage(context.driver)
+    login_page.confirm_cookie()
+
+
+@when("I click all done button")
+def step_impl(context):
+    login_page = LoginPage(context.driver)
+    login_page.click_all_done_button()

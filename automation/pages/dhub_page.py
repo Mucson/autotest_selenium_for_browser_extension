@@ -20,6 +20,9 @@ class dHubPage(BasePage):
     SuccessfulDeletePostMessage = (By.XPATH, "//div[@role='alertdialog']")
     dPortalPageButton = (By.XPATH, "//div[@data-id='dportal']")
 
+    def _verify_page_(self):
+        self.on_this_page(self.NewPostButton)
+
     def open_small_menu(self):
         self.click_on(self.SmallMenuOpenButton)
 

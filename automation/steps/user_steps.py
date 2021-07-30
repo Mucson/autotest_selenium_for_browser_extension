@@ -1,3 +1,5 @@
+import time
+
 from behave import *
 
 from automation.pages.user_page import UserPage
@@ -7,3 +9,23 @@ from automation.pages.user_page import UserPage
 def step_impl(context):
     user_page = UserPage(context.driver)
     user_page.edit_profile()
+
+
+@given("I open small menu")
+def step_impl(context):
+    user_page = UserPage(context.driver)
+    user_page.open_small_menu()
+
+
+@given("I open dPortal page")
+def step_impl(context):
+    user_page = UserPage(context.driver)
+    user_page.open_small_menu()
+    user_page.open_dportal_page()
+
+
+@when("I open menu")
+def step_impl(context):
+    user_page = UserPage(context.driver)
+    user_page.open_small_menu()
+    time.sleep(1)

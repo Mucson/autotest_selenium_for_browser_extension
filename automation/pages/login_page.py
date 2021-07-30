@@ -12,7 +12,6 @@ class LoginPage(BasePage):
     PasswordField = (By.XPATH, "//input[@name='password']")
     ConfirmPasswordField = (By.XPATH, "//input[@name='confirmPassword']")
     ImportAccount = (By.XPATH, "//*[text()=' IMPORT ']")
-    # LockAccountButton = (By.XPATH, "//*[text()='Lock account']")
     LockAccountButton = (By.XPATH, "//div[@data-id='lock account']")
     UnlockAccountButton = (By.XPATH, "//*[text()=' UNLOCK ']")
     InitRestoreAccountButton = (By.XPATH, "//a[text()='Restore Your Account']")
@@ -22,6 +21,8 @@ class LoginPage(BasePage):
     LetsDecentrPageSubTitle = (By.XPATH, "//div[@class='page-subtitle']")
     RestoreAccountPageTitle = (By.XPATH, "//div[contains(@class, 'page-title')]")
     RestoreAccountPageContent = (By.XPATH, "//div[@class='page-content']")
+    ConfirmCookieButton = (By.XPATH, "//button[@type='button']")
+    AllDoneButton = (By.XPATH, "//*[text()=' ALL DONE ']")
 
     def get_welcome_message_title(self):
         return self.get_text(self.WelcomeMessageTitle)
@@ -31,9 +32,6 @@ class LoginPage(BasePage):
 
     def click_on_import_account_button(self):
         self.click_on(self.ImportAccountButton)
-
-    # def click_on_create_account_button(self):
-    #     self.click_on(self.CreateAccountButton)
 
     def enter_seed_phrase(self, text):
         self.type_in(self.SeedPhraseField, text)
@@ -73,3 +71,9 @@ class LoginPage(BasePage):
 
     def get_restore_account_page_content(self):
         return self.get_text(self.RestoreAccountPageContent)
+
+    def confirm_cookie(self):
+        self.click_on(self.ConfirmCookieButton)
+
+    def click_all_done_button(self):
+        self.click_on(self.AllDoneButton)
