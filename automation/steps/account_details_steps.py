@@ -5,12 +5,6 @@ from behave import *
 from automation.pages.account_details_page import AccountDetailsPage
 
 
-@when("I open user page")
-def step_impl(context):
-    account_details_page = AccountDetailsPage(context.driver)
-    account_details_page.go_to_account_details()
-
-
 @when('I fill in the first name field')
 def step_impl(context):
     account_details_page = AccountDetailsPage(context.driver)

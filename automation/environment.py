@@ -25,6 +25,8 @@ def before_all(context):
     parser.read("credentials.ini")
     context.config = parser
 
+    # context.base_url = "https://zeus.testnet.decentr.xyz"
+
 
 def before_scenario(context, scenario):
     context.driver.delete_all_cookies()

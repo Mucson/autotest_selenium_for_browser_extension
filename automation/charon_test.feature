@@ -54,8 +54,6 @@ Feature: Charon smoke and regression tests
     Then I see element with text "Successfully sent"
 
   Scenario: Validation sending form
-    Given I open dPortal page
-    When I open Assets tab
     When I click Send button
     Then I see validation message for amount field
       | amount     | text                      |

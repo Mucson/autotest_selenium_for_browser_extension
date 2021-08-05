@@ -19,6 +19,7 @@ class dHubPage(BasePage):
     SuccessfulPublishPostMessage = (By.XPATH, "//div[@role='alertdialog']")
     SuccessfulDeletePostMessage = (By.XPATH, "//div[@role='alertdialog']")
     dPortalPageButton = (By.XPATH, "//div[@data-id='dportal']")
+    UserIconMenuButton = (By.XPATH, "//div[contains(@class,'menu__user-item ')]")
 
     def _verify_page_(self):
         self.on_this_page(self.NewPostButton)
@@ -58,3 +59,6 @@ class dHubPage(BasePage):
 
     def click_dportal_page_button(self):
         self.click_on(self.dPortalPageButton)
+
+    def open_user_page(self):
+        self.click_on(self.UserIconMenuButton)

@@ -15,13 +15,7 @@ def step_impl(context):
 def step_impl(context):
     user_page = UserPage(context.driver)
     user_page.open_small_menu()
-
-
-@given("I open dPortal page")
-def step_impl(context):
-    user_page = UserPage(context.driver)
-    user_page.open_small_menu()
-    user_page.open_dportal_page()
+    time.sleep(1)
 
 
 @when("I open menu")

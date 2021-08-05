@@ -3,18 +3,21 @@ from automation.pages.base_page import BasePage
 
 
 class dPortalPage(BasePage):
-
     PDVRateTab = (By.XPATH, "//a[@href='#/portal/pdv-rate']")
     ActivityTab = (By.XPATH, "//a[@href='#/portal/activity']")
     AssetsTab = (By.XPATH, "//a[@href='#/portal/assets']")
+    VpnTab = (By.XPATH, "//a[@href='#/portal/vpn']")
     SendButton = (By.XPATH, "//button[text()=' Send ']")
-    BackButton = (By.XPATH, "")
     CancelButton = (By.XPATH, "//button[text()=' Cancel ']")
     AmountField = (By.XPATH, "//input[contains(@class, 'transfer-input')]")
     WalletAddressField = (By.XPATH, "//textarea[contains(@class, 'transfer-input')]")
     CopyWalletAddressButton = (By.XPATH, "//button[contains(@class, 'portal-page__copy-wallet-button')]")
     SuccessfulSendingInfoMessage = (By.XPATH, "//div[@role='alertdialog']")
-    SmallMenuButton = (By.XPATH, "div[contains(@class, 'menu__trigger')]")
+    SmallMenuButton = (By.XPATH, "//div[contains(@class, 'menu__trigger')]")
+
+    def _verify_page_(self):
+        self.on_this_page(self.PDVRateTab, self.ActivityTab, self.AssetsTab, self.VpnTab, self.CopyWalletAddressButton,
+                          self.SmallMenuButton)
 
     def open_assets_tab(self):
         self.click_on(self.AssetsTab)

@@ -25,3 +25,16 @@ def step_impl(context):
 def step_impl(context):
     dhub_page = dHubPage(context.driver)
     dhub_page.open_small_menu()
+
+
+@when("I open user page")
+def step_impl(context):
+    dhub_page = dHubPage(context.driver)
+    dhub_page.open_user_page()
+
+
+@given("I open dPortal page")
+def step_impl(context):
+    dhub_page = dHubPage(context.driver)
+    dhub_page.open_small_menu()
+    dhub_page.click_dportal_page_button()

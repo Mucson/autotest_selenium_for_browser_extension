@@ -6,15 +6,23 @@ class AccountDetailsPage(BasePage):
     UserIconMenuButton = (By.XPATH, "//div[contains(@class,'menu__user-item ')]")
     FormFieldFirstName = (By.XPATH, "//div[text()='First Name']/..//input")
     FormFieldLastName = (By.XPATH, "//div[text()='Last Name']/..//input")
-    GenderMale = (By.XPATH, "//mat-radio-button[@tabindex='-1'][1]")
-    GenderFemale = (By.XPATH, "//mat-radio-button[@tabindex='-1'][2]")
+    GenderMale = (By.XPATH, "//mat-radio-button[@id='mat-radio-2']")
+    GenderFemale = (By.XPATH, "//mat-radio-button[@id='mat-radio-3']")
+    # GenderMale = (By.XPATH, "//mat-radio-button[@tabindex='-1'][1]")
+    # GenderFemale = (By.XPATH, "//mat-radio-button[@tabindex='-1'][2]")
     BioField = (By.XPATH, "//textarea[@trim='blur']")
+    EmailField = (By.XPATH, "//input[@type='email']")
     NewPasswordField = (By.XPATH, "//input[@formcontrolname='password']")
     ConfirmPasswordField = (By.XPATH, "//input[@formcontrolname='confirmPassword']")
     SaveButton = (By.XPATH, "//*[text()=' Save ']")
     SuccessfulUpdateUserInfoMessage = (By.XPATH, "//div[@role='alertdialog']")
     BackButton = (By.XPATH, "//div[contains(@class, 'btn__back')]")
     AccountDetailsPageTitle = (By.XPATH, "//div[contains(@class, 'page-title')]")
+
+    def _verify_page_(self):
+        self.on_this_page(self.FormFieldFirstName, self.FormFieldLastName, self.GenderMale, self.GenderFemale,
+                          self.BioField, self.EmailField, self.NewPasswordField, self.ConfirmPasswordField,
+                          self.SaveButton)
 
     def go_to_account_details(self):
         self.click_on(self.UserIconMenuButton)
